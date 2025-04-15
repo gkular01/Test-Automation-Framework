@@ -18,7 +18,7 @@ public class JSONUtility {
 		// in java there is no in built functionality so we are using third party
 		// library GSON.
 
-		File jsonFile = new File(System.getProperty("user.dir") + "\\config\\config.json");//
+		File jsonFile = new File(System.getProperty("user.dir") + "/config/config.json");//
 		//
 
 		FileReader fileReader = null;
