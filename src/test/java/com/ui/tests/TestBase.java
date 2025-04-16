@@ -54,7 +54,7 @@ public class TestBase {
 			LambdaTestUtility.quitSession();// close the browserSession on lambda Test
 
 		} else {
-			homePage.getDriver().close();
+			homePage.getDriver().quit();
 		}
 
 	}
