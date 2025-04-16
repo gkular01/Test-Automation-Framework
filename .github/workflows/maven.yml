@@ -3,6 +3,7 @@
 name: Test Automation Workflow
 
 on:
+  workflow_dispatch:
   schedule:
   - cron: 30 06 * * *
   push:
