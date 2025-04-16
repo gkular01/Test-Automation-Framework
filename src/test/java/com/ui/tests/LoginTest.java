@@ -18,32 +18,30 @@ public class LoginTest extends TestBase {
 
 	Logger logger = LoggerUtility.getLogger(this.getClass());
 
+	@Test(description = "Verifies valid user is able to login into the application", groups = { "e2e",
+			"sanity" }, dataProviderClass = com.ui.dataproviders.LoginDataProvider.class, dataProvider = "LoginTestDataProvider", retryAnalyzer = com.ui.listeners.MyRetryAnalyzer.class)
+	public void loginTest(User user) {
+
+		assertEquals(homePage.goToLoginPage().doLoginWith(user.getEmailAddress(), user.getPassword()).getUserName(),
+				"Gurpreet Kular");
+
+	}
+
 	/*
 	 * @Test(description =
 	 * "Verifies valid user is able to login into the application", groups = {
 	 * "e2e", "sanity" }, dataProviderClass =
 	 * com.ui.dataproviders.LoginDataProvider.class, dataProvider =
-	 * "LoginTestDataProvider", retryAnalyzer =
-	 * com.ui.listeners.MyRetryAnalyzer.class) public void loginTest(User user) {
+	 * "LoginTestCSVDataProvider", retryAnalyzer =
+	 * com.ui.listeners.MyRetryAnalyzer.class)
 	 * 
-	 * // homePage.goToLoginPage().doLoginWith("komiji9612@isorax.com", //
-	 * "password").getUserName();
+	 * public void loginCSVTest(User user) {
 	 * 
 	 * assertEquals(homePage.goToLoginPage().doLoginWith(user.getEmailAddress(),
 	 * user.getPassword()).getUserName(), "Gurpreet Kular");
 	 * 
 	 * }
 	 */
-
-	@Test(description = "Verifies valid user is able to login into the application", groups = { "e2e",
-			"sanity" }, dataProviderClass = com.ui.dataproviders.LoginDataProvider.class, dataProvider = "LoginTestCSVDataProvider", retryAnalyzer = com.ui.listeners.MyRetryAnalyzer.class)
-
-	public void loginCSVTest(User user) {
-
-		assertEquals(homePage.goToLoginPage().doLoginWith(user.getEmailAddress(), user.getPassword()).getUserName(),
-				"Gurpreet Kular");
-
-	}
 
 	/*
 	 * @Test(description =
